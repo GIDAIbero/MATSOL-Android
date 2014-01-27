@@ -1,13 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    >
-<TextView
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:text="Hello World, MainWindow"
-    />
-</LinearLayout>
+    android:padding="10dp"
+    android:weightSum="1.0">
+    <TableRow
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:weightSum="1.0"
+        >
+      <Button android:id="@+id/matrix_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="?android:attr/borderlessButtonStyle"
+        android:drawableTop="@drawable/matrix_button"
+        android:text="@string/matrix_button_label"/>
+      <Button android:id="@+id/determinant_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="?android:attr/borderlessButtonStyle"
+        android:drawableTop="@drawable/determinant_button"
+        android:text="@string/determinant_button_label"/>
+      <Button android:id="@+id/rescalc_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="?android:attr/borderlessButtonStyle"
+        android:drawableTop="@drawable/rescalc_button"
+        android:text="@string/rescalc_button_label"/>
+    </TableRow>
+    <TableRow
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:weightSum="1.0">
+      <Button android:id="@+id/decoder_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="?android:attr/borderlessButtonStyle"
+        android:drawableTop="@drawable/decoder_button"
+        android:text="@string/decoder_button_label"/>
+      <Button android:id="@+id/converter_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="?android:attr/borderlessButtonStyle"
+        android:drawableTop="@drawable/converter_button"
+        android:text="@string/converter_button_label"/>
+    </TableRow>
+    <TableRow
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:weightSum="1.0"/>
+</TableLayout>
 
