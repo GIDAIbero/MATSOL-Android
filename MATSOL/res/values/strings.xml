@@ -2,8 +2,9 @@
 <resources>
   <string name="app_name">MATSOL</string>
   <string name="determinant_button_label">Determinant</string>
-  <string name="matrix_button_label">Linear Equation\n System</string>
+  <string name="matrix_button_label">Linear Equation System</string>
   <string name="decoder_button_label">Resistor Decoder</string>
   <string name="converter_button_label">Base Converter</string>
   <string name="rescalc_button_label">Resistor Calculator</string>
+  <string name="action_about">About</string>
 </resources>
