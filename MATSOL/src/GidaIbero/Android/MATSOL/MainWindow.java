@@ -2,6 +2,9 @@ package GidaIbero.Android.MATSOL;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.app.ActionBar;
+import android.view.Menu;
+import android.view.MenuInflater;
 
 public class MainWindow extends Activity
 {
@@ -11,5 +14,12 @@ public class MainWindow extends Activity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+      // Inflate the menu items for use in the action bar
+      MenuInflater inflater = getMenuInflater();
+      inflater.inflate(R.menu.main_activity_actions, menu);
+      return super.onCreateOptionsMenu(menu);
     }
 }
