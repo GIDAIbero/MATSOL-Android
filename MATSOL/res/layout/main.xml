@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:gravity="fill_horizontal"
+    android:orientation="horizontal"
     android:padding="2dp"
-    android:weightSum="1.0"
-    android:paddingTop="10dp"
-    android:shrinkColumns="*">
+    android:paddingTop="15dp"
+    android:shrinkColumns="*"
+    android:stretchColumns="*"
+    android:weightSum="1.0" >
+
     <TableRow
-        android:orientation="horizontal"
         android:layout_width="fill_parent"
+        android:orientation="horizontal"
         android:paddingBottom="20dp"
-        android:weightSum="1.0"
-        >
+        android:paddingTop="10dp"
+        android:weightSum="1.0" >
+
       <Button android:id="@+id/matrix_button"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -51,9 +55,5 @@
         android:drawableTop="@drawable/converter_button"
         android:text="@string/converter_button_label"/>
     </TableRow>
-    <TableRow
-        android:orientation="horizontal"
-        android:layout_width="fill_parent"
-        android:weightSum="1.0"/>
 </TableLayout>
 
