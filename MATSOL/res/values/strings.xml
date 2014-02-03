@@ -1,10 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+  <!-- Main data strings -->
   <string name="app_name">MATSOL</string>
+
+  <!-- Main window buttons -->
+  <string name="about">About</string>
   <string name="determinant_button_label">Determinant</string>
-  <string name="matrix_button_label">Linear Equation System</string>
-  <string name="decoder_button_label">Resistor Decoder</string>
-  <string name="converter_button_label">Base Converter</string>
-  <string name="rescalc_button_label">Resistor Calculator</string>
+  <string name="matrix_button_label">Equations</string>
+  <string name="decoder_button_label">Decoder</string>
+  <string name="converter_button_label">Converter</string>
+  <string name="rescalc_button_label">Resistors</string>
   <string name="action_about">About</string>
+
+  <!-- about strings -->
+  <string name="version">Version 0.0</string>
+  <string name="copyright">GIDA 2014 - Ingeniería Electrónica - Universidad Iberoamericana</string>
+  <string name="authors_banner">Authors:</string>
+  <string name="name1">Alejandro Paredes Alva</string>
+  <string name="name2">Santiago Torres Arias</string>
+  <string name="name3">Yoshiki Vazques Baeza</string>
+  <string name="contact_banner">Contact</string>
+  <string name="website">www.ie.uia.mx</string>
+  <string name="email">polarbearsdevteam@gmail.com</string>
 </resources>
