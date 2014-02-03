@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="top|center_horizontal"
+    android:orientation="vertical" >
+
+    <ImageView
+      android:paddingTop="20dp"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:src="@drawable/about_logo" />
+
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@string/version" />
+
+    <TextView
+      android:paddingTop="10dp"
+      android:ems="300"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:gravity="center_horizontal"
+      android:lines="2"
+      android:text="@string/copyright" />
+
+
+    <TextView
+      android:paddingTop="10dp"
+      android:text="@string/authors_banner"
+      android:textStyle="bold"
+      android:textSize="15sp"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"/>
+    <TextView
+      android:text="@string/name1"
+      android:selectAllOnFocus="True"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"/>
+    <TextView
+      android:text="@string/name2"
+      android:selectAllOnFocus="True"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"/>
+    <TextView
+      android:text="@string/name3"
+      android:selectAllOnFocus="True"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"/>
+
+      
+    <TextView
+      android:paddingTop="10dp"
+      android:text="@string/contact_banner"
+      android:textStyle="bold"
+      android:textSize="15sp"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"/>
+    <TextView
+      android:text="@string/website"
+      android:autoLink="web"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"/>
+    <TextView
+      android:text="@string/email"
+      android:autoLink="email"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"/>
+</LinearLayout>
+
