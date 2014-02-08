@@ -22,4 +22,7 @@
   <string name="contact_banner">Contact</string>
   <string name="website">www.ie.uia.mx</string>
   <string name="email">polarbearsdevteam@gmail.com</string>
+
+  <string name="cancel">Cancel</string>
+  <string name="matrix_picker_next">Next</string>
 </resources>
