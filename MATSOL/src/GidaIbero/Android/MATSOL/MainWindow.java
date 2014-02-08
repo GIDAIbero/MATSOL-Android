@@ -65,7 +65,6 @@ public class MainWindow extends Activity
     //  the callback for the determinant and linear equation system,
     //  preparses information about the caller and displays a box to the user
     //  requesting the size of the matrix to calculate
-    //TODO: change this method's name
     public void showMatrixDimensionPicker(View view){
       Toast toast; 
       DialogFragment dialog;
@@ -74,18 +73,18 @@ public class MainWindow extends Activity
       // Should identify the caller
       if(callerId==R.id.matrix_button){
         toast = Toast.makeText(this,"linear equation system button pressed",1);
-        // TODO: this should be a localizable constant
-        dialog = new MatrixDimensionPicker(callerId,"choose the size of the equation");
+        dialog = new MatrixDimensionPicker(callerId,
+            this.getString(R.string.matrix_size_message_picker_dialog));
       }
       else{
         toast = Toast.makeText(this,"determinant button pressed",1);
-        // TODO: this should also be a localizable constant
-        dialog = new MatrixDimensionPicker(callerId,"choose the size of the determinant");
+        dialog = new MatrixDimensionPicker(callerId,
+            this.getString(R.string.determinant_message_picker_dialog));
       }
       // Should create intent information and pass it to the dialog
 
       // Should display the dialog
-      dialog.show(getFragmentManager(), "missiles");
+      dialog.show(getFragmentManager(), "matrix_size_dialog");
       toast.show();
     }
   
