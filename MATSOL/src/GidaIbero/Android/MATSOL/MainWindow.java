@@ -37,6 +37,7 @@ public class MainWindow extends Activity
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+      //Toast.makeText(this,"wtf",1).show();
       // Handle presses on the action bar items
       switch (item.getItemId()) {
         case R.id.action_about:
@@ -64,7 +65,8 @@ public class MainWindow extends Activity
     //  the callback for the determinant and linear equation system,
     //  preparses information about the caller and displays a box to the user
     //  requesting the size of the matrix to calculate
-    public void matrixDimensionPicker(View view){
+    //TODO: change this method's name
+    public void showMatrixDimensionPicker(View view){
       Toast toast; 
       DialogFragment dialog;
 
