@@ -23,6 +23,9 @@
   <string name="website">www.ie.uia.mx</string>
   <string name="email">polarbearsdevteam@gmail.com</string>
 
+  <!-- matrix size picker dialog !-->
   <string name="cancel">Cancel</string>
   <string name="matrix_picker_next">Next</string>
+  <string name="determinant_message_picker_dialog">Choose the size of the determinant</string>
+  <string name="matrix_size_message_picker_dialog">Choose the size of the matrix</string>
 </resources>
