@@ -37,7 +37,8 @@
         android:layout_height="wrap_content"
         style="?android:attr/borderlessButtonStyle"
         android:drawableTop="@drawable/rescalc_button"
-        android:text="@string/rescalc_button_label"/>
+        android:text="@string/rescalc_button_label"
+        android:onClick="showRescalcPicker"/>
     </TableRow>
     <TableRow
         android:orientation="horizontal"
