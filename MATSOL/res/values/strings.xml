@@ -28,4 +28,12 @@
   <string name="matrix_picker_next">Next</string>
   <string name="determinant_message_picker_dialog">Choose the size of the determinant</string>
   <string name="matrix_size_message_picker_dialog">Choose the size of the matrix</string>
+
+  <!-- Rescalc Dialog -->
+  <string name="rescalc_dialog_message">Configure the resistor to calculate</string>
+  <string name="res_target_value">Target value:</string>
+  <string name="algorithm_label_text">Algorithm:</string>
+  <string name="resistor_algorithm_original">Original</string>
+  <string name="resistor_algorithm_dp">Dynamic Programming</string>
+  <string name="tolerance_target_value">Tolerance:</string>
 </resources>
