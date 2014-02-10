@@ -66,27 +66,44 @@ public class MainWindow extends Activity
     //  preparses information about the caller and displays a box to the user
     //  requesting the size of the matrix to calculate
     public void showMatrixDimensionPicker(View view){
-      Toast toast; 
       DialogFragment dialog;
-
       int callerId = view.getId();
       // Should identify the caller
       if(callerId==R.id.matrix_button){
-        toast = Toast.makeText(this,"linear equation system button pressed",1);
         dialog = new MatrixDimensionPicker(callerId,
-            this.getString(R.string.matrix_size_message_picker_dialog));
+           this.getString(R.string.matrix_size_message_picker_dialog));
+        
+        dialog.show(getFragmentManager(), "matrix_size_dialog");
       }
       else{
-        toast = Toast.makeText(this,"determinant button pressed",1);
-        dialog = new MatrixDimensionPicker(callerId,
-            this.getString(R.string.determinant_message_picker_dialog));
+        //dialog = new MatrixDimensionPicker(callerId,
+        //    this.getString(R.string.determinant_message_picker_dialog));
       }
       // Should create intent information and pass it to the dialog
 
       // Should display the dialog
-      dialog.show(getFragmentManager(), "matrix_size_dialog");
-      toast.show();
     }
   
+    // showRescalcPicker
+    //  This callback functions shows a dialog that lets the user pick:
+    //    The value of the resistance
+    //    The value of the tolerance for the calculation
+    //    The type of algorithm to use
+
+    public void showRescalcPicker(View view){
+      DialogFragment dialog;
+
+      int callerId = view.getId();
+      // Should identify the caller
+      if(callerId==R.id.rescalc_button){
+        dialog = new RescalcDialog(
+           this.getString(R.string.rescalc_dialog_message));
+        dialog.show(getFragmentManager(), "rescalc_dialog");
+      }
+      else{
+        Toast.makeText(this,"I don't know why I am here",1).show();
+      }
+
+    }
 }
 
