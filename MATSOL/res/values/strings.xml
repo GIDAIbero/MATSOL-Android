@@ -36,4 +36,7 @@
   <string name="resistor_algorithm_original">Original</string>
   <string name="resistor_algorithm_dp">Dynamic Programming</string>
   <string name="tolerance_target_value">Tolerance:</string>
+
+  <!-- Matrix Input Activity -->
+  <string name="matrix_input_label">Matrix Input</string>
 </resources>

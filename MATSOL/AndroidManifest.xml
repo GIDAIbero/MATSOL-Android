@@ -17,7 +17,10 @@
         </activity>
         <activity android:name="About"
           android:label="@string/about"
-
+          android:parentActivityName="MainWindow">
+        </activity> 
+        <activity android:name="MatrixInputActivity"
+          android:label="@string/matrix_input_label"
           android:parentActivityName="MainWindow">
         </activity>
     </application>
