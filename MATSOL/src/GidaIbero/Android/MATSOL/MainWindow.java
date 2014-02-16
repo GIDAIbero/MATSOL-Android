@@ -12,12 +12,19 @@ import android.view.View;
 // Dialog that lets the select user the size of the matrix
 import GidaIbero.Android.MATSOL.MatrixDimensionPicker;
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.app.DialogFragment;
+
 //for debugging purposes only
 import android.widget.Toast;
 
-public class MainWindow extends Activity
+public class MainWindow extends Activity implements MatrixDimensionPicker.DialogListener
 {
+    public final static String MATRIX_TARGET = 
+      "GidaIbero.Android.MATSOL.matrix_target";
+    public final static String MATRIX_SIZE = 
+      "GidaIbero.Android.MATSOL.matrix_size";
+      
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -76,11 +83,12 @@ public class MainWindow extends Activity
         dialog.show(getFragmentManager(), "matrix_size_dialog");
       }
       else{
-        //dialog = new MatrixDimensionPicker(callerId,
-        //    this.getString(R.string.determinant_message_picker_dialog));
+        dialog = new MatrixDimensionPicker(callerId,
+            this.getString(R.string.determinant_message_picker_dialog));
+        dialog.show(getFragmentManager(), "determinant_size_dialog");
       }
       // Should create intent information and pass it to the dialog
-
+      
       // Should display the dialog
     }
   
@@ -104,6 +112,39 @@ public class MainWindow extends Activity
         Toast.makeText(this,"I don't know why I am here",1).show();
       }
 
+    }
+
+
+    ////////////////////////////////////////////////////
+    // dialog fragment callbacks
+    // ////////////////////////////////////////////////
+
+    // The dialog fragment receives a reference to this Activity through the
+    // Fragment.onAttach() callback, which it uses to call the following methods
+    // defined by the NoticeDialogFragment.NoticeDialogListener interface
+    @Override
+    public void onDialogPositiveClick(DialogFragment dialog) {
+      // User touched the dialog's positive button
+      if(dialog instanceof MatrixDimensionPicker){
+        MatrixDimensionPicker matrix_dialog = (MatrixDimensionPicker) dialog;
+        int target = matrix_dialog.getTarget();
+        Toast.makeText(this,"going to the next activity with target: " + 
+            target + " and size " + matrix_dialog.getSize() ,1).show();
+
+        Intent intent = new Intent(this,  MatrixInputActivity.class);
+        // bundle the id number of the button that caused it as the selected operation
+        intent.putExtra(MATRIX_TARGET, target + "");
+
+        // bundle the size of the matrix
+        intent.putExtra(MATRIX_SIZE, matrix_dialog.getSize() + "");
+        startActivity(intent);
+      }
+    }
+    
+    @Override
+    public void onDialogNegativeClick(DialogFragment dialog) {
+      // User touched the dialog's negative button
+      Toast.makeText(this,"Should NOT proceed with the next activity",1).show();
     }
 }
 
