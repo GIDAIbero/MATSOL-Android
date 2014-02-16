@@ -25,6 +25,7 @@
         android:text="@string/matrix_button_label"
         android:singleLine="false"
         android:onClick="showMatrixDimensionPicker"/>
+
       <Button android:id="@+id/determinant_button"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -32,6 +33,7 @@
         android:drawableTop="@drawable/determinant_button"
         android:text="@string/determinant_button_label"
         android:onClick="showMatrixDimensionPicker"/>
+
       <Button android:id="@+id/rescalc_button"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
