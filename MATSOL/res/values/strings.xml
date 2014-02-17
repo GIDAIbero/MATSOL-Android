@@ -39,4 +39,7 @@
 
   <!-- Matrix Input Activity -->
   <string name="matrix_input_label">Matrix Input</string>
+  
+  <!-- Matrix Display Activity -->
+  <string name="matrix_display_label">Matrix Input</string>
 </resources>

@@ -23,5 +23,9 @@
           android:label="@string/matrix_input_label"
           android:parentActivityName="MainWindow">
         </activity>
+        <activity android:name="MatrixDisplayActivity"
+          android:label="@string/matrix_display_label"
+          android:parentActivityName="MatrixInputActivity">
+        </activity>
     </application>
 </manifest>
