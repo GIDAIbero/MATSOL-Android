@@ -15,6 +15,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.content.Intent;
 
+import android.text.method.DigitsKeyListener;
+
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TableRow.LayoutParams;
@@ -93,6 +95,7 @@ public class MatrixInputActivity extends Activity
               LayoutParams.FILL_PARENT,
               LayoutParams.WRAP_CONTENT)
             );
+        this.editTextArray[currentIndex].setKeyListener(new DigitsKeyListener());
         this.editTextArray[currentIndex].setPadding(5, 5, 5, 5);
         tableRow.addView(this.editTextArray[currentIndex]);
       }
