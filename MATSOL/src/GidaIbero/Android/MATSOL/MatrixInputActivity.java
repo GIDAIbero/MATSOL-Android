@@ -31,6 +31,14 @@ public class MatrixInputActivity extends Activity
   private Matrix matrix_data;
   private boolean isSolved;
   private float[] results;
+
+  public final static String MATRIX_SIZE = MainWindow.MATRIX_TARGET;
+  public final static String MATRIX_VALUES = 
+    "GidaIbero.Android.MATSOL.matrix_values";
+
+  public final static String MATRIX_RESULTS =
+    "GidaIbero.Android.MATSOL.matrix_results";
+
   @Override
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -53,10 +61,12 @@ public class MatrixInputActivity extends Activity
     if(target == R.id.matrix_button){
       text.setText("Should draw a " + size + " matrix");
       // add the results vector
-      this.width+=1;
       try{
         matrix_data=(Matrix)new LinearEquationSystem(this.height,this.width);
-      }catch(Exception e){}
+      }catch(Exception e){
+        Log.i("matrix_data", "something went wrong with the leq");
+      }
+      this.width+=1;
     } else if(target== R.id.determinant_button){
       text.setText("Should draw a " + size + " determinant");
       try{
@@ -108,6 +118,20 @@ public class MatrixInputActivity extends Activity
       Toast.makeText(this,"the determinant for this is" + this.results[0],1).show();
     }else if(target == R.id.matrix_button){
       Toast.makeText(this,"Should display a new activity now",1).show();
+      Intent intent = new Intent(this, MatrixDisplayActivity.class);
+
+      // bundle the results
+      float[][] result_matrix = this.matrix_data.returnMatrix();
+      this.width--;
+      Log.i("matrix_data","matrix data is: " + matrix_data);
+      intent.putExtra(MATRIX_SIZE, this.height);
+      for(int i=0;i<this.height;i++){
+          Log.i("matrix_data","result vector is: " +
+              result_matrix[i][this.width-1]); 
+         intent.putExtra(MATRIX_VALUES+i, result_matrix[i]);
+      }
+      intent.putExtra(MATRIX_RESULTS, this.results);
+      startActivity(intent);
     }
   }
 
@@ -129,8 +153,6 @@ public class MatrixInputActivity extends Activity
           value = 0.0f;
         }
         try{
-          Log.i("matrix_data","setting value: " + value + 
-              " at (" + i + "," + j + ")");
           matrix_data.setValueAt(i,j,value);
         }catch(Exception e){}
       }
