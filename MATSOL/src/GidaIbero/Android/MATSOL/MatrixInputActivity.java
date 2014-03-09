@@ -133,8 +133,8 @@ public class MatrixInputActivity extends Activity
             //traverse each element of the row
             tableRow = new TableRow(this);
             for(int j=0;j<this.width;j++){
-                currentIndex = i*this.width + j; // this points to the location of the
-                // editText in the matrix
+                currentIndex = i*this.width + j; // this points to the 
+                // location of the editText in the matrix
                 // build an edit Text with the specified parameters
                 this.editTextArray[currentIndex] = new EditText(this); // init
                 this.editTextArray[currentIndex].setLayoutParams(      // base
@@ -157,9 +157,9 @@ public class MatrixInputActivity extends Activity
 
     }
 
-    // this method will provide visual feedback and wrap the results of the solve
-    // method once it is finished and will display the result dialog(or activity)
-    // upon finishing.
+    // this method will provide visual feedback and wrap the results of the
+    // solve method once it is finished and will display the result dialog(or
+    // activity) upon finishing.
     public void goButtonCallback(View view){
         // should do the necessary pre-wrapping here
 
@@ -168,7 +168,8 @@ public class MatrixInputActivity extends Activity
 
         // do the presentation post-processing and display the result.
         if(target == R.id.determinant_button && this.isSolved){
-            Toast.makeText(this,"the determinant for this is" + this.results[0],1).show();
+            Toast.makeText(this,"the determinant for this is" +
+                    this.results[0],1).show();
         }else if(target == R.id.matrix_button){
             Toast.makeText(this,"Should display a new activity now",1).show();
             Intent intent = new Intent(this, MatrixDisplayActivity.class);
@@ -204,16 +205,19 @@ public class MatrixInputActivity extends Activity
                     value = Float.valueOf(cell.getText().toString());
                 }catch(NumberFormatException e){
                     value = 0.0f;
+                    this.editTextArray[currentIndex].setText("0.0");
                 }
                 try{
+                    // update the value in the data model
                     matrix_data.setValueAt(i,j,value);
-                }catch(Exception e){}
+                }catch(MatrixSolver.ElementOutOfRangeException e){}
             }
         }
+        // call the specific solve method
         try{
             this.results = this.matrix_data.solve();
             this.isSolved = this.matrix_data.isSolved();
-        }catch(Exception e){
+        }catch(MatrixSolver.ImpossibleSolutionException e){
             this.isSolved=false;
         }
 
