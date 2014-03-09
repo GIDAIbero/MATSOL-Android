@@ -152,6 +152,12 @@ public class MatrixDimensionPicker extends DialogFragment {
         }
         public void onProgressChanged(SeekBar seekBar, int progress, boolean
                 fromUser){
+            
+            // check if the value selected is less than the minimum we need 
+            // to work with
+            if(progress<2){
+                seekBar.setProgress(2);
+            }
             this.textView.setText(String.format("%d",progress));
             this.parent.setSize(progress);
         }
