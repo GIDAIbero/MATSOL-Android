@@ -20,8 +20,8 @@
     android:background="@android:color/darker_gray"/> 
   <SeekBar
     android:id="@+id/matrix_seek_bar"
-    android:max="25"
-    android:progress="5"
+    android:max="23"
+    android:progress="3"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:layout_marginTop="4dp"
