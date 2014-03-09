@@ -54,6 +54,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.content.Intent;
 import android.text.method.DigitsKeyListener;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 
 // android includes to draw a table
 import android.widget.TableLayout;
@@ -168,8 +170,12 @@ public class MatrixInputActivity extends Activity
 
         // do the presentation post-processing and display the result.
         if(target == R.id.determinant_button && this.isSolved){
-            Toast.makeText(this,"the determinant for this is" +
-                    this.results[0],1).show();
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setMessage("The determinant is: " + this.results[0]);
+            builder.setCancelable(false);
+            builder.setPositiveButton("OK", null);
+            AlertDialog alert = builder.create(); 
+            alert.show();
         }else if(target == R.id.matrix_button){
             Toast.makeText(this,"Should display a new activity now",1).show();
             Intent intent = new Intent(this, MatrixDisplayActivity.class);
@@ -218,6 +224,15 @@ public class MatrixInputActivity extends Activity
             this.results = this.matrix_data.solve();
             this.isSolved = this.matrix_data.isSolved();
         }catch(MatrixSolver.ImpossibleSolutionException e){
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setMessage(e.toString().split(":")[1]); // getting rid of
+                                                            // the unfriendly
+                                                            // message header
+            builder.setCancelable(false);
+            builder.setPositiveButton("OK", null);
+            AlertDialog alert = builder.create(); 
+            alert.show();
+        
             this.isSolved=false;
         }
 
