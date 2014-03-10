@@ -9,11 +9,13 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.app.ActionBar;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.MenuInflater;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.content.Intent;
+import android.support.v4.app.NavUtils;
 
 import android.widget.TableLayout;
 import android.widget.TableRow;
@@ -34,6 +36,7 @@ public class MatrixDisplayActivity extends Activity
   @Override
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
+
     
     int currentIndex;
     TableRow tableRow;
@@ -86,6 +89,16 @@ public class MatrixDisplayActivity extends Activity
     }
     
   }
-
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+        // Respond to the action bar's Up/Home button
+            case android.R.id.home:
+                //NavUtils.navigateUpFromSameTask(this);
+                finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
 }
