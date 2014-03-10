@@ -12,7 +12,7 @@
     android:layout_marginBottom="14dp"
     android:textSize="30sp"
     android:minEms="1"
-    android:text="5"
+    android:text="4"
     /> 
    <View
     android:layout_height="50dp"
@@ -21,7 +21,7 @@
   <SeekBar
     android:id="@+id/matrix_seek_bar"
     android:max="23"
-    android:progress="3"
+    android:progress="2"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:layout_marginTop="4dp"
