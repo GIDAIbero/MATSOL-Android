@@ -22,6 +22,10 @@
         <activity android:name="MatrixInputActivity"
           android:label="@string/matrix_input_label"
           android:parentActivityName="MainWindow">
+          <intent-filter>
+            <action android:name="android.intent.action.VIEW" />
+            <category android:name="android.intent.category.DEFAULT" />
+          </intent-filter>
         </activity>
         <activity android:name="MatrixDisplayActivity"
           android:label="@string/matrix_display_label"
