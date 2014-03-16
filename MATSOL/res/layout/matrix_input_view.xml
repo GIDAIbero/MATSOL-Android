@@ -29,12 +29,14 @@
       android:scrollbars="horizontal|vertical"
       android:scrollbarAlwaysDrawHorizontalTrack="true"
       >
-      <TableLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:stretchColumns="0,0"
-        android:id="@+id/matrix_input_table" >
-      </TableLayout>
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:stretchColumns="0,0"
+            android:id="@+id/matrix_input_table" 
+            android:layout_weight=".9"
+            >
+        </TableLayout>
     </ScrollView>
   </HorizontalScrollView>
 </LinearLayout>

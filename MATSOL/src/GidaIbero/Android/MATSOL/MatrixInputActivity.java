@@ -50,8 +50,10 @@ import android.app.ActionBar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
+import android.view.View.MeasureSpec;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.ImageView;
 import android.content.Intent;
 import android.text.method.DigitsKeyListener;
 import android.app.AlertDialog;
@@ -100,6 +102,7 @@ public class MatrixInputActivity extends Activity
 
         int currentIndex;
         TableRow tableRow;
+        ImageView imageView;
         // Define the layout. 
         setContentView(R.layout.matrix_input_view);
         TextView text = (TextView)findViewById(R.id.matrix_input_text);
@@ -167,7 +170,7 @@ public class MatrixInputActivity extends Activity
                             Gravity.CENTER_HORIZONTAL);
                     this.editTextArray[currentIndex].setKeyListener(new
                             DigitsKeyListener());// set appropiate keyboard
-                    if(j == this.width-1){
+                    if(j == this.width-1 && target == R.id.matrix_button){
                         this.editTextArray[currentIndex].setHint(
                                 Html.fromHtml("<small><small>" 
                                     +"r<sub><small>"+i+"</small></sub>" + 
@@ -180,6 +183,16 @@ public class MatrixInputActivity extends Activity
                     }
                     tableRow.addView(this.editTextArray[currentIndex]);
                 }
+                
+                editTextArray[0].measure(MeasureSpec.UNSPECIFIED,
+                        MeasureSpec.UNSPECIFIED);
+                // this will add target and position-specific views to hint the
+                // user of what we are doing
+                tableRow = decorateTableRow(tableRow, 
+                        editTextArray[0].getMeasuredHeight(),
+                        editTextArray[0].getMeasuredWidth(),
+                        i);
+
                 matrixTable.addView(tableRow, new TableLayout.LayoutParams(
                             LayoutParams.FILL_PARENT,
                             LayoutParams.WRAP_CONTENT));
@@ -188,6 +201,7 @@ public class MatrixInputActivity extends Activity
 
         }
     }
+
     // this method will provide visual feedback and wrap the results of the
     // solve method once it is finished and will display the result dialog(or
     // activity) upon finishing.
@@ -206,7 +220,6 @@ public class MatrixInputActivity extends Activity
             AlertDialog alert = builder.create(); 
             alert.show();
         }else if(target == R.id.matrix_button && this.isSolved){
-            Toast.makeText(this,"Should display a new activity now",1).show();
             Intent intent = new Intent(this, MatrixDisplayActivity.class);
 
             // bundle the results
@@ -221,6 +234,68 @@ public class MatrixInputActivity extends Activity
         }
     }
 
+    // this method is a table row drawing helper
+    private TableRow decorateTableRow(TableRow tableRow, int height,
+            int width, int row){
+        ImageView leftImageView = new ImageView(this);
+        ImageView rightImageView = new ImageView(this); 
+        leftImageView.setBackgroundResource(R.drawable.left_edge);
+        rightImageView.setBackgroundResource(R.drawable.right_edge);
+        if(target==R.id.matrix_button){
+            // we need to allocate two more elements
+            ImageView insideLeftImageView = new ImageView(this);
+            ImageView insideRightImageView = new ImageView(this);
+            if(row==0){ // should change decorators for top decorators
+                leftImageView.setBackgroundResource(
+                        R.drawable.top_left_edge);
+                rightImageView.setBackgroundResource(
+                        R.drawable.top_right_edge);
+                insideLeftImageView.setBackgroundResource(
+                        R.drawable.top_right_edge); // this is not a mistake
+                insideRightImageView.setBackgroundResource(
+                        R.drawable.top_left_edge);
+            }else if(row == this.height-1){
+                leftImageView.setBackgroundResource(
+                        R.drawable.bottom_left_edge);
+                rightImageView.setBackgroundResource(
+                        R.drawable.bottom_right_edge);
+                insideLeftImageView.setBackgroundResource(
+                        R.drawable.bottom_right_edge); // this is not a mistake
+                insideRightImageView.setBackgroundResource(
+                        R.drawable.bottom_left_edge);
+
+            }else{
+                insideRightImageView.setBackgroundResource(
+                        R.drawable.left_edge);
+                insideLeftImageView.setBackgroundResource(
+                        R.drawable.right_edge);
+            }
+            insideLeftImageView.setLayoutParams(new LayoutParams(
+                        height,width/5));
+            insideRightImageView.setLayoutParams(new LayoutParams(
+                        height,width/5));
+            insideRightImageView.getLayoutParams().height = height;
+            insideLeftImageView.getLayoutParams().height = height;
+            insideRightImageView.getLayoutParams().width = width/5;
+            insideLeftImageView.getLayoutParams().width = width/5;
+            tableRow.addView(insideLeftImageView,this.width-1);
+            tableRow.addView(insideRightImageView,this.width);
+
+        }else{
+            // this is a determinant button
+        }
+        leftImageView.setLayoutParams(new LayoutParams(
+                    height,width/10));
+        rightImageView.setLayoutParams(new LayoutParams(
+                    height,width/10));
+        leftImageView.getLayoutParams().height = height;
+        rightImageView.getLayoutParams().height = height;
+        leftImageView.getLayoutParams().width = width/5;
+        rightImageView.getLayoutParams().width = width/5;
+        tableRow.addView(leftImageView,0);
+        tableRow.addView(rightImageView);
+        return tableRow;
+    }
     // this method will populate the matrix object and call the solve
     // method on it
     private void solve(){

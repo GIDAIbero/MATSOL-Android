@@ -15,7 +15,8 @@
   <!-- about strings -->
   <string name="version">Version 0.0</string>
   <string name="copyright">GIDA 2014 - Ingeniería Electrónica - Universidad Iberoamericana</string>
-  <string name="authors_banner">Authors:</string>
+  <string name="authors_banner">Author:</string>
+  <string name="special_thanks_banner">Special Thanks:</string>
   <string name="name1">Alejandro Paredes Alva</string>
   <string name="name2">Santiago Torres Arias</string>
   <string name="name3">Yoshiki Vazques Baeza</string>
