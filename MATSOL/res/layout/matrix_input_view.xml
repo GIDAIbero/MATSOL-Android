@@ -29,12 +29,29 @@
       android:scrollbars="horizontal|vertical"
       android:scrollbarAlwaysDrawHorizontalTrack="true"
       >
-      <TableLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:stretchColumns="0,0"
-        android:id="@+id/matrix_input_table" >
-      </TableLayout>
+      <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:weightSum="1"
+        >
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="centerInside"
+            android:adjustViewBounds="true"
+            android:src="@drawable/lparentheses"
+            android:layout_weight=".1"
+        />
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:stretchColumns="0,0"
+            android:id="@+id/matrix_input_table" 
+            android:layout_weight=".9"
+            >
+        </TableLayout>
+    </LinearLayout>  
     </ScrollView>
   </HorizontalScrollView>
 </LinearLayout>
