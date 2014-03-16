@@ -52,6 +52,7 @@ import android.view.MenuInflater;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.ImageView;
 import android.content.Intent;
 import android.text.method.DigitsKeyListener;
 import android.app.AlertDialog;
@@ -100,6 +101,7 @@ public class MatrixInputActivity extends Activity
 
         int currentIndex;
         TableRow tableRow;
+        ImageView imageView;
         // Define the layout. 
         setContentView(R.layout.matrix_input_view);
         TextView text = (TextView)findViewById(R.id.matrix_input_text);
@@ -167,7 +169,7 @@ public class MatrixInputActivity extends Activity
                             Gravity.CENTER_HORIZONTAL);
                     this.editTextArray[currentIndex].setKeyListener(new
                             DigitsKeyListener());// set appropiate keyboard
-                    if(j == this.width-1){
+                    if(j == this.width-1 && target == R.id.matrix_button){
                         this.editTextArray[currentIndex].setHint(
                                 Html.fromHtml("<small><small>" 
                                     +"r<sub><small>"+i+"</small></sub>" + 
@@ -180,6 +182,17 @@ public class MatrixInputActivity extends Activity
                     }
                     tableRow.addView(this.editTextArray[currentIndex]);
                 }
+                imageView = new ImageView(this); 
+                imageView.setBackgroundColor(0xff000000);
+                imageView.setLayoutParams(new LayoutParams(
+                            LayoutParams.FILL_PARENT,
+                            10)
+                        );
+                imageview.set
+                imageView.getLayoutParams().height = 80;
+                imageView.getLayoutParams().width = 10;
+                tableRow.addView(imageView,0);
+
                 matrixTable.addView(tableRow, new TableLayout.LayoutParams(
                             LayoutParams.FILL_PARENT,
                             LayoutParams.WRAP_CONTENT));
