@@ -97,27 +97,7 @@ public class MainWindow extends Activity implements MatrixDimensionPicker.Dialog
       // Should display the dialog
     }
   
-    // showRescalcPicker
-    //  This callback functions shows a dialog that lets the user pick:
-    //    The value of the resistance
-    //    The value of the tolerance for the calculation
-    //    The type of algorithm to use
-
-    public void showRescalcPicker(View view){
-      DialogFragment dialog;
-
-      int callerId = view.getId();
-      // Should identify the caller
-      if(callerId==R.id.rescalc_button){
-        dialog = new RescalcDialog(
-           this.getString(R.string.rescalc_dialog_message));
-        dialog.show(getFragmentManager(), "rescalc_dialog");
-      }
-      else{
-        Toast.makeText(this,"I don't know why I am here",1).show();
-      }
-
-    }
+    
 
 
     ////////////////////////////////////////////////////
@@ -133,8 +113,6 @@ public class MainWindow extends Activity implements MatrixDimensionPicker.Dialog
       if(dialog instanceof MatrixDimensionPicker){
         MatrixDimensionPicker matrix_dialog = (MatrixDimensionPicker) dialog;
         int target = matrix_dialog.getTarget();
-        Toast.makeText(this,"going to the next activity with target: " + 
-            target + " and size " + matrix_dialog.getSize() ,1).show();
 
         Intent intent = new Intent(this,  MatrixInputActivity.class);
         // bundle the id number of the button that caused it as the selected operation
@@ -149,7 +127,6 @@ public class MainWindow extends Activity implements MatrixDimensionPicker.Dialog
     @Override
     public void onDialogNegativeClick(DialogFragment dialog) {
       // User touched the dialog's negative button
-      Toast.makeText(this,"Should NOT proceed with the next activity",1).show();
     }
 }
 
