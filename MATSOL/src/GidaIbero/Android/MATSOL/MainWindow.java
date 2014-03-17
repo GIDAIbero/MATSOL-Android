@@ -1,3 +1,8 @@
+/*****************************
+You may use, distribute and copy MATSOL for Android under the terms of GNU
+General Public License version 3, which is displayed below.
+******************************/
+
 package GidaIbero.Android.MATSOL;
 
 import android.app.Activity;
