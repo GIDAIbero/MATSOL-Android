@@ -44,7 +44,7 @@ public class MatrixDimensionPicker extends DialogFragment {
     public MatrixDimensionPicker(int target, String message){
         super();
         this.target = target;
-        this.size = 5;
+        this.size = 4;
         this.message = new String(message);
     }
     @Override
