@@ -3,9 +3,9 @@ You may use, distribute and copy MATSOL for Android under the terms of GNU
 General Public License version 3, which is displayed below.
 ******************************/
 
-package GidaIbero.Android.MATSOL;
+package gidaibero.android.matsol;
 
-import GidaIbero.Android.MATSOL.MatrixInputActivity;
+import gidaibero.android.matsol.MatrixInputActivity;
 import MatrixSolver.Determinant;
 import MatrixSolver.LinearEquationSystem;
 import MatrixSolver.Matrix;

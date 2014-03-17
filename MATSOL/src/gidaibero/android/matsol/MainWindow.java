@@ -3,7 +3,7 @@ You may use, distribute and copy MATSOL for Android under the terms of GNU
 General Public License version 3, which is displayed below.
 ******************************/
 
-package GidaIbero.Android.MATSOL;
+package gidaibero.android.matsol;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -15,7 +15,7 @@ import android.view.MenuInflater;
 import android.view.View;
 
 // Dialog that lets the select user the size of the matrix
-import GidaIbero.Android.MATSOL.MatrixDimensionPicker;
+import gidaibero.android.matsol.MatrixDimensionPicker;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.app.DialogFragment;
@@ -26,9 +26,9 @@ import android.widget.Toast;
 public class MainWindow extends Activity implements MatrixDimensionPicker.DialogListener
 {
     public final static String MATRIX_TARGET = 
-      "GidaIbero.Android.MATSOL.matrix_target";
+      "gidaibero.android.matsol.matrix_target";
     public final static String MATRIX_SIZE = 
-      "GidaIbero.Android.MATSOL.matrix_size";
+      "gidaibero.android.matsol.matrix_size";
       
     /** Called when the activity is first created. */
     @Override
