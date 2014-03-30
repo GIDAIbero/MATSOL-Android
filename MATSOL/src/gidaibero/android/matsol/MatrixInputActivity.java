@@ -37,7 +37,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.ImageView;
 import android.content.Intent;
-import android.text.method.DigitsKeyListener;
+import android.text.InputType;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 
@@ -106,7 +106,8 @@ public class MatrixInputActivity extends Activity
             // the matrix is squared unless we have a linear equation system
             this.width = this.height;
             if(target == R.id.matrix_button){
-                text.setText("Should draw a " + size + " matrix");
+                //text.setText("Press GO to solve your " + size + "x" + size + 
+                 //       " matrix!:");
                 // add the results vector
                 try{
                     matrix_data=(Matrix)new
@@ -116,7 +117,6 @@ public class MatrixInputActivity extends Activity
                 }
                 this.width+=1;
             } else if(target== R.id.determinant_button){
-                text.setText("Should draw a " + size + " determinant");
                 try{
                     matrix_data=(Matrix)new
                         Determinant(this.height,this.width);
@@ -150,8 +150,9 @@ public class MatrixInputActivity extends Activity
                     this.editTextArray[currentIndex].setMaxLines(1);
                     this.editTextArray[currentIndex].setGravity(
                             Gravity.CENTER_HORIZONTAL);
-                    this.editTextArray[currentIndex].setKeyListener(new
-                            DigitsKeyListener());// set appropiate keyboard
+                    this.editTextArray[currentIndex].setInputType(
+                            InputType.TYPE_CLASS_NUMBER | 
+                            InputType.TYPE_NUMBER_FLAG_SIGNED);
                     if(j == this.width-1 && target == R.id.matrix_button){
                         this.editTextArray[currentIndex].setHint(
                                 Html.fromHtml("<small><small>" 
