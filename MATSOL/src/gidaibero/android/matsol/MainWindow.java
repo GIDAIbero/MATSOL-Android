@@ -3,7 +3,7 @@ You may use, distribute and copy MATSOL for Android under the terms of GNU
 General Public License version 3, which is displayed below.
 ******************************/
 
-package GidaIbero.Android.MATSOL;
+package gidaibero.android.matsol;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -15,7 +15,7 @@ import android.view.MenuInflater;
 import android.view.View;
 
 // Dialog that lets the select user the size of the matrix
-import GidaIbero.Android.MATSOL.MatrixDimensionPicker;
+import gidaibero.android.matsol.MatrixDimensionPicker;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.app.DialogFragment;
@@ -26,9 +26,9 @@ import android.widget.Toast;
 public class MainWindow extends Activity implements MatrixDimensionPicker.DialogListener
 {
     public final static String MATRIX_TARGET = 
-      "GidaIbero.Android.MATSOL.matrix_target";
+      "gidaibero.android.matsol.matrix_target";
     public final static String MATRIX_SIZE = 
-      "GidaIbero.Android.MATSOL.matrix_size";
+      "gidaibero.android.matsol.matrix_size";
       
     /** Called when the activity is first created. */
     @Override
@@ -97,27 +97,7 @@ public class MainWindow extends Activity implements MatrixDimensionPicker.Dialog
       // Should display the dialog
     }
   
-    // showRescalcPicker
-    //  This callback functions shows a dialog that lets the user pick:
-    //    The value of the resistance
-    //    The value of the tolerance for the calculation
-    //    The type of algorithm to use
-
-    public void showRescalcPicker(View view){
-      DialogFragment dialog;
-
-      int callerId = view.getId();
-      // Should identify the caller
-      if(callerId==R.id.rescalc_button){
-        dialog = new RescalcDialog(
-           this.getString(R.string.rescalc_dialog_message));
-        dialog.show(getFragmentManager(), "rescalc_dialog");
-      }
-      else{
-        Toast.makeText(this,"I don't know why I am here",1).show();
-      }
-
-    }
+    
 
 
     ////////////////////////////////////////////////////
@@ -133,8 +113,6 @@ public class MainWindow extends Activity implements MatrixDimensionPicker.Dialog
       if(dialog instanceof MatrixDimensionPicker){
         MatrixDimensionPicker matrix_dialog = (MatrixDimensionPicker) dialog;
         int target = matrix_dialog.getTarget();
-        Toast.makeText(this,"going to the next activity with target: " + 
-            target + " and size " + matrix_dialog.getSize() ,1).show();
 
         Intent intent = new Intent(this,  MatrixInputActivity.class);
         // bundle the id number of the button that caused it as the selected operation
@@ -149,7 +127,6 @@ public class MainWindow extends Activity implements MatrixDimensionPicker.Dialog
     @Override
     public void onDialogNegativeClick(DialogFragment dialog) {
       // User touched the dialog's negative button
-      Toast.makeText(this,"Should NOT proceed with the next activity",1).show();
     }
 }
 

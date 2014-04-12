@@ -2,7 +2,7 @@
 You may use, distribute and copy MATSOL for Android under the terms of GNU
 General Public License version 3, which is displayed below.
 ******************************/
-package GidaIbero.Android.MATSOL;
+package gidaibero.android.matsol;
 
 
 /* MatrixDimensionPicker class
@@ -44,7 +44,7 @@ public class MatrixDimensionPicker extends DialogFragment {
     public MatrixDimensionPicker(int target, String message){
         super();
         this.target = target;
-        this.size = 5;
+        this.size = 4;
         this.message = new String(message);
     }
     @Override

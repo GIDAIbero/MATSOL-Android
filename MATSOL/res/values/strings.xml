@@ -13,7 +13,7 @@
   <string name="action_about">About</string>
 
   <!-- about strings -->
-  <string name="version">Version 0.0</string>
+  <string name="version">Version 1.0</string>
   <string name="copyright">GIDA 2014 - Ingeniería Electrónica - Universidad Iberoamericana</string>
   <string name="authors_banner">Author:</string>
   <string name="special_thanks_banner">Special Thanks:</string>
