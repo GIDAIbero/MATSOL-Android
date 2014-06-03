@@ -31,5 +31,10 @@
           android:label="@string/matrix_display_label"
           android:parentActivityName="MatrixInputActivity">
         </activity>
+        <activity android:name="BaseConverterActivity"
+          android:label="@string/base_converter_label"
+          android:parentActivityName="MainWindow"
+          >
+        </activity>
     </application>
 </manifest>

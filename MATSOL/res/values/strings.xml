@@ -43,4 +43,8 @@
   
   <!-- Matrix Display Activity -->
   <string name="matrix_display_label">Matrix Input</string>
+
+  <!-- Base Converter Activity -->
+  <string name="base_converter_label">Base Converter</string>
+
 </resources>

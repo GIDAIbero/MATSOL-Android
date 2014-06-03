@@ -28,7 +28,8 @@ General Public License version 3, which is displayed below.
             android:drawableTop="@drawable/matrix_button"
             android:text="@string/matrix_button_label"
             android:singleLine="false"
-            android:onClick="showMatrixDimensionPicker"/>
+            android:onClick="showMatrixDimensionPicker"
+            />
 
         <Button android:id="@+id/determinant_button"
             android:layout_width="fill_parent"
@@ -36,7 +37,8 @@ General Public License version 3, which is displayed below.
             style="?android:attr/borderlessButtonStyle"
             android:drawableTop="@drawable/determinant_button"
             android:text="@string/determinant_button_label"
-            android:onClick="showMatrixDimensionPicker"/>
+            android:onClick="showMatrixDimensionPicker"
+            />
         
         <Button 
             android:layout_width="fill_parent"
@@ -49,5 +51,42 @@ General Public License version 3, which is displayed below.
 
 
     </TableRow>
+    <TableRow
+        android:layout_width="fill_parent"
+        android:orientation="horizontal"
+        android:paddingBottom="20dp"
+        android:paddingTop="10dp"
+        android:weightSum="1.0" >
+
+        <Button android:id="@+id/converter_button"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            style="?android:attr/borderlessButtonStyle"
+            android:drawableTop="@drawable/converter_button"
+            android:text="@string/converter_button_label"
+            android:singleLine="false"
+            android:onClick="pushBaseConverterActivity"
+            />
+
+        <Button android:id="@+id/determinant_button"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            style="?android:attr/borderlessButtonStyle"
+            android:drawableTop="@drawable/determinant_button"
+            android:text="@string/determinant_button_label"
+            android:onClick="showMatrixDimensionPicker"
+            android:visibility="invisible"
+            />
+        
+        <Button 
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            style="?android:attr/borderlessButtonStyle"
+            android:drawableTop="@drawable/determinant_button"
+            android:text="@string/determinant_button_label"
+            android:visibility="invisible"
+            />
+    </TableRow>
+
 </TableLayout>
 
