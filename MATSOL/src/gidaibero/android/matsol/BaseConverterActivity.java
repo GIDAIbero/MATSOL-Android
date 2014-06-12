@@ -10,6 +10,8 @@ import android.os.Bundle;
 import android.app.ActionBar;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.widget.Button;
+
 
 public class BaseConverterActivity extends Activity
 {
@@ -28,6 +30,18 @@ public class BaseConverterActivity extends Activity
     public boolean onCreateOptionsMenu(Menu menu) {
 
         return super.onCreateOptionsMenu(menu);
+
+    }
+
+    public void changeFrom(View view) {
+
+    }
+
+    public void changeTo(View view) {
+
+    }
+
+    public void digitPressed(View view) {
 
     }
 }
