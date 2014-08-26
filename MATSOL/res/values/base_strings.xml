@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string-array name="base_strings">
+    <item>"Binary"</item>
+    <item>"Trinary"</item>
+    <item>"Quaternary"</item>
+    <item>"Quinary"</item>
+    <item>"Senary"</item>
+    <item>"Sevenary"</item>
+    <item>"Octal"</item>
+    <item>"Nonary"</item>
+    <item>"Decimal"</item>
+    <item>"Undecimal"</item>
+    <item>"Duodecimal"</item>
+    <item>"Tridecimal"</item>
+    <item>"Tetradecimal"</item>
+    <item>"Pentadecimal"</item>
+    <item>"Hexadecimal"</item>
+  </string-array>
+</resources>
