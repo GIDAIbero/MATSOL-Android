@@ -303,15 +303,6 @@ General Public License version 3, which is displayed below.
           android:onClick="changeFrom"
           android:text="From:"
           />
-      <!---
-        <Button
-          android:id="@+id/converter_button_cc"
-          android:layout_width="fill_parent"
-          android:layout_height="wrap_content"
-          android:layout_weight="23"
-          style="?android:attr/borderlessButtonStyle"
-          android:text="cc"
-          /> -->
         <Button
           android:id="@+id/converter_button_del"
           android:layout_width="fill_parent"
@@ -323,17 +314,6 @@ General Public License version 3, which is displayed below.
           android:text="Del"
           />
   </LinearLayout> 
-  <!-- 
-  <LinearLayout
-      android:layout_height="fill_parent"
-      android:layout_width="fill_parent"
-      android:layout_weight="1"
-      android:orientation="horizontal"
-      />
-
-
-
--->
 
 </LinearLayout>
 

@@ -16,7 +16,9 @@ import android.widget.TextView;
 import android.widget.Button;
 import android.view.View;
 import android.widget.ArrayAdapter;
+
 public class RescalcDialog extends DialogFragment {
+
   int target;
   String message;
   TextView resValue;
