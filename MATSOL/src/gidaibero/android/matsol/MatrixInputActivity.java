@@ -152,7 +152,8 @@ public class MatrixInputActivity extends Activity
                             Gravity.CENTER_HORIZONTAL);
                     this.editTextArray[currentIndex].setInputType(
                             InputType.TYPE_CLASS_NUMBER | 
-                            InputType.TYPE_NUMBER_FLAG_SIGNED);
+                            InputType.TYPE_NUMBER_FLAG_SIGNED |
+                            InputType.TYPE_NUMBER_FLAG_DECIMAL);
                     if(j == this.width-1 && target == R.id.matrix_button){
                         this.editTextArray[currentIndex].setHint(
                                 Html.fromHtml("<small><small>" 
