@@ -191,16 +191,20 @@ public class BaseConverterActivity extends Activity
     }
 
     private void setBase(int base) {
+        TextView label;
 
         if(this.select_to) {
             this.toBase = base;
             updateTo();
+            label = (TextView)findViewById(R.id.converter_to_label);
+            label.setText("To(" + base + ")");
         } else {
             this.fromBase = base;
             enableButtonsFromBase(this.fromBase);
             disableButtonsFromBase(this.fromBase);
-            Toast.makeText(getApplicationContext(), "Base Selected " +
-                    this.fromBase, 1).show();
+            label = (TextView)findViewById(R.id.converter_from_label);
+            label.setText("From(" + base + ")");
+
         }
     }
 }
